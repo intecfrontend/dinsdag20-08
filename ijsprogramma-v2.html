@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=form, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myForm">
+
+        <div class="[ smaken ] [ is-error ]">
+            <label for="smaken" class="smakenclasse" aria-hidden="true"></label>ijssmaken
+            <br><label for="smaken" class="c-check-field__label">vanillesmaak</label>
+            <input type="checkbox" name="smaken" id="vannilleip" class="c-check-field__input" style="display: none;"
+                disabled checked value="vanillebol" />
+            <input type="text" name="abvanille" id="abvan" min="0" max="3" step="1" class="c-input-field" value="0" />
+
+
+
+            <br><label for="smaken" class="c-check-field__label">aardbeismaak</label>
+            <input type="text" name="abaardbei" id="abaardb" min="0" max="3" step="1" class="c-input-field" value="0" />
+
+
+
+
+            <br><label for="smaken" class="c-check-field__label">banaansmaak</label>
+            <input type="text" name="abbanaan" id="abban" min="0" max="3" step="1" class="c-input-field" value="0" />
+
+
+
+            <br><label for="smaken" class="c-check-field__label">chocosmaak</label>
+            <input type="text" name="abchoco" id="abchoc" min="0" max="3" step="1" class="c-input-field" value="0" />
+
+        </div>
+
+        <label for="naam">naamgegevens</label>
+        <input type="text" name="naam" id="vngeg" placeholder="vul je voornaam in" oninput="voornaamFunction()"
+            required>
+
+
+
+        <button type="submit" onclick="myOrder()" value="">Mijn ijsje-bestelling</button>
+
+
+    </form>
+
+    <script>
+        function myOrder() {
+            // document.getElementById("myForm").submit();
+
+            var abaardb = parseInt(document.querySelector("#abaardb").value);
+            var abvan = parseInt(document.querySelector("#abvan").value);
+            var abban = parseInt(document.querySelector("#abban").value);
+            var abchoc = parseInt(document.querySelector("#abchoc").value);
+
+            var tab = abaardb + abvan + abban + abchoc;
+            if (tab > 3 || tab < 1) {
+                alert(abaardb, "maximaal 3 bollen, minimaal 1 bol")
+            };
+
+            var vn = document.getElementById("vngeg").value;
+            console.log(vn);
+            console.log(tab);
+            console.log(abvan);
+
+        }
+        myOrder();
+    </script>
+
+
+</body>
+
+</html>
